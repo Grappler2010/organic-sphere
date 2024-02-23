@@ -1,4 +1,4 @@
-import "/styles/global.css";
+import "/src/styles/global.css";
 import startApp from './app';
 import { initEngine } from './render/init';
 
