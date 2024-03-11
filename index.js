@@ -3,6 +3,7 @@ import startApp from './app';
 import { initEngine } from './render/init';
 
 (async () => {
-    await initEngine()
+    const containerElement = document.getElementById('canvasContainer');
+    await initEngine(containerElement)
     startApp()
 })()

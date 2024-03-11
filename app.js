@@ -15,7 +15,7 @@ const startApp = () => {
   const ambientLight = new THREE.AmbientLight('#4255ff', 0.5)
   scene.add(dirLight, ambientLight)
 
-  const geometry = new THREE.IcosahedronGeometry(1, 400);
+  const geometry = new THREE.IcosahedronGeometry(1, 100);
   const material = new THREE.MeshStandardMaterial({
     onBeforeCompile: (shader) => {
       material.userData.shader = shader;
