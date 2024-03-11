@@ -16,11 +16,11 @@ let scene,
   renderAspectRatio
 const renderTickManager = new TickManager()
 
-export const initEngine = async () => {
+export const initEngine = async (container) => {
   scene = new THREE.Scene()
 
-  renderWidth = window.innerWidth
-  renderHeight = window.innerHeight
+  renderWidth = container.clientWidth;
+  renderHeight = container.clientHeight;
 
   renderAspectRatio = renderWidth / renderHeight
 
@@ -36,7 +36,7 @@ export const initEngine = async () => {
   renderer.shadowMap.enabled = true
   renderer.shadowMap.type = THREE.PCFSoftShadowMap
 
-  document.body.appendChild(renderer.domElement)
+  document.getElementById('canvasContainer').appendChild(renderer.domElement);
 
   const target = new THREE.WebGLRenderTarget(renderWidth, renderHeight, {
     samples: 8,
@@ -51,8 +51,8 @@ export const initEngine = async () => {
   window.addEventListener(
     'resize',
     () => {
-      renderWidth = window.innerWidth
-      renderHeight = window.innerHeight
+      renderWidth = container.clientWidth;
+      renderHeight = container.clientHeight;
       renderAspectRatio = renderWidth / renderHeight
 
       renderer.setPixelRatio(window.devicePixelRatio * 1.5)

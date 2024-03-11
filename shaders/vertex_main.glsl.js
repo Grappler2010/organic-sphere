@@ -1,7 +1,7 @@
 const vertexShaderMain = `
   vec3 coords = normal;
   coords.y += uTime;
-  vec3 noisePattern = vec3(noise(coords / 1.5));
+  vec3 noisePattern = vec3(noise(coords / 2.0));
   float pattern = wave(noisePattern + uTime);
 
   vDisplacement = pattern;
